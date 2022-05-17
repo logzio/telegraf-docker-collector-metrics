@@ -1,0 +1,14 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+	apt-get install -y wget && \
+	wget https://dl.influxdata.com/telegraf/releases/telegraf_1.22.3-1_arm64.deb && \
+	dpkg -i telegraf_1.22.3-1_arm64.deb
+
+COPY telegraf.conf  /telegraf.conf
+
+# RUN mv otelcontribcol_linux_amd64 otelcontribcol
+#https://dl.influxdata.com/telegraf/releases/telegraf-1.22.3_linux_arm64.tar.gz
+
+CMD ["telegraf", "--config", "telegraf.conf" ]
+
