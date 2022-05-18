@@ -8,7 +8,7 @@ To simplify shipping metrics from one or many sources, we created Telegraf Docke
 docker pull logzio/telegraf-docker-collector-metrics
 ```
 
-## Run the Telegraf Docker Metrics Collector
+## 2. Run the collector
 
 ```sh
 docker run --name telegraf-docker-collector-metrics \
