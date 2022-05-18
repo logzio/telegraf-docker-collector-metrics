@@ -27,7 +27,7 @@ docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock
 | Name            | Description                                                                                                               |
 | --------------- | :------------------------------------------------------------------------------------------------------------------------ |
 | METRICS_TOKEN   | Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to. |
-| LOGZIO_LISTENER | Your Logz.io listener address, For example: `https://listener.logz.io:8053`.                                              |
+| LOGZIO_LISTENER | **Default**: `https://listener.logz.io:8053`. Your Logz.io listener address followed by port `8053`.                                             |
 | DOCKER_ENDPOINT | Address to reach the required Docker (default: `unix:///var/run/docker.sock`)Daemon.                                      |
 | TIMEOUT         | **Default**: `5s`. The request timeout for any Docker Daemon query.                                                         |
 
