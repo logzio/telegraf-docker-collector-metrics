@@ -1,6 +1,6 @@
 # Telegraf Docker Metrics Collector
 
-To simplify shipping metrics from one or many sources, we created Docker Metrics Collector. Docker Metrics Collector is a container that runs Telegraf collector.
+To simplify shipping metrics from one or many sources, we created Telegraf Docker Metrics Collector. Telegraf Docker Metrics Collector is a container that runs Telegraf collector.
 
 ## Pull the Docker image of the Telegraf Docker Metrics Collector
 
