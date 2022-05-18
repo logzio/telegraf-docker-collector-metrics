@@ -29,7 +29,7 @@ docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock
 | METRICS_TOKEN   | Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to. |
 | LOGZIO_LISTENER | Your Logz.io listener address, For example: `https://listener.logz.io:8053`.                                              |
 | DOCKER_ENDPOINT | Address to reach the required Docker (default: `unix:///var/run/docker.sock`)Daemon.                                      |
-| TIMEOUT         | The request timeout for any Docker Daemon query ( default: `5s`).                                                         |
+| TIMEOUT         | **Default**: `5s`. The request timeout for any Docker Daemon query.                                                         |
 
 | EXCLUED_IMAGES | **Default**: `nil`. A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2`) |
 
