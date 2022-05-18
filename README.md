@@ -38,7 +38,7 @@ Give your metrics a few minutes to get from your system to ours,
 and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 
 <details>
-  <summary markdown="span"> List of metrics: </summary>
+  <summary markdown="span"> Click here to view full list of metrics: </summary>
   
 	-   docker_container_blkio_io_service_bytes_recursive_read
 	-   docker_container_blkio_io_service_bytes_recursive_write
