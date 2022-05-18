@@ -31,7 +31,7 @@ docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock
 | DOCKER_ENDPOINT | Address to reach the required Docker (default: `unix:///var/run/docker.sock`)Daemon.                                      |
 | TIMEOUT         | The request timeout for any Docker Daemon query ( default: `5s`).                                                         |
 
-| EXCLUED_IMAGES | A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2` ( default: `nil`) |
+| EXCLUED_IMAGES | **Default**: `nil`. A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2`) |
 
 ### Check Logz.io for your metrics
 
