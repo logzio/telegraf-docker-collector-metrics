@@ -1,2 +1,4 @@
 .env
 /bkp
+apps.py
+telegraf-v1.conf

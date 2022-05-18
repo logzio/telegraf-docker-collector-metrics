@@ -24,14 +24,13 @@ If you prefer to store these environment variables in an [`.env` file](./docker.
 docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock logzio/telegraf-docker-collector-metrics:latest
 ```
 
-| Name            | Description                                                                                                               |
-| --------------- | :------------------------------------------------------------------------------------------------------------------------ |
-| METRICS_TOKEN   | Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to. |
-| LOGZIO_LISTENER | Your Logz.io listener address, For example: `https://listener.logz.io:8053`.                                              |
-| DOCKER_ENDPOINT | Address to reach the required Docker (default: `unix:///var/run/docker.sock`)Daemon.                                      |
-| TIMEOUT         | The request timeout for any Docker Daemon query ( default: `5s`).                                                         |
-
-| EXCLUED_IMAGES | A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2` ( default: `nil`) |
+| Name            | Description                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| METRICS_TOKEN   | Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to.                                                                                                                                                                                                                                                                 |
+| LOGZIO_LISTENER | Your Logz.io listener address, For example: `https://listener.logz.io:8053`.                                                                                                                                                                                                                                                                                                              |
+| DOCKER_ENDPOINT | Address to reach the required Docker (default: `unix:///var/run/docker.sock`)Daemon.                                                                                                                                                                                                                                                                                                      |
+| TIMEOUT         | The request timeout for any Docker Daemon query ( default: `5s`).                                                                                                                                                                                                                                                                                                                         |
+| EXCLUED_IMAGES  | A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2` ( default: `nil`) |
 
 ### Check Logz.io for your metrics
 
@@ -85,12 +84,11 @@ List of metrics:
 -   docker_n_listener_events
 -   docker_n_used_file_descriptors
 
-## Versions
+## Changelog
 
 1.0.0:
 
--   Created Dockerfiles for amd64 and arm64
--   Define telegraf.conf file
+-   Initial Release
 
 ## License
 
