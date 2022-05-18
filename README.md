@@ -36,7 +36,7 @@ docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock
 
 Give your metrics a few minutes to get from your system to ours,
 and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
-
+### Metrics list
 <details>
   <summary markdown="span"> Click here to view full list of metrics: </summary>
   
