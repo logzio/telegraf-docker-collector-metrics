@@ -1,27 +1,27 @@
-# Telegraf Docker Metrics Collector
+# Docker Metrics Collector
 
 To simplify shipping metrics from one or many sources, we created Telegraf Docker Metrics Collector. Telegraf Docker Metrics Collector is a container that runs Telegraf collector.
 
 ## 1. Pull the Docker image
 
 ```sh
-docker pull logzio/telegraf-docker-collector-metrics:latest
+docker pull logzio/docker-metrics-collector:latest
 ```
 
 ## 2. Run the collector
 
 ```sh
-docker run --name telegraf-docker-collector-metrics \
+docker run --name docker-metrics-collector \
  --env METRICS_TOKEN="<<METRICS-SHIPPING-TOKEN>>" \
  --env LOGZIO_LISTENER="<<LOGZIO_LISTENER>>" \
  -v /var/run/docker.sock:/var/run/docker.sock \
- logzio/telegraf-docker-collector-metrics:latest
+ logzio/docker-metrics-collector:latest
 ```
 
 If you prefer to store these environment variables in an [`.env` file](./docker.env), run the following command:
 
 ```sh
-docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock logzio/telegraf-docker-collector-metrics:latest
+docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock logzio/docker-metrics-collector:latest
 ```
 
 | Name            | Description                                                                                                                                                                                                                                                                                                                                                                                  |
