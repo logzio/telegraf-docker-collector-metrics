@@ -30,7 +30,7 @@ docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock
 | LOGZIO_LISTENER | **Default**: `https://listener.logz.io:8053`. Your Logz.io listener address followed by port `8053`.                                                                                                                                                                                                                                                                                         |
 | DOCKER_ENDPOINT | **Default**: default: `unix:///var/run/docker.sock`. Address to reach the required Docker Daemon.                                                                                                                                                                                                                                                                                            |
 | TIMEOUT         | **Default**: `5s`. The request timeout for any Docker Daemon query.                                                                                                                                                                                                                                                                                                                          |
-| EXCLUED_IMAGES  | **Default**: `nil`. A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2`) |
+| EXCLUDED_IMAGES  | **Default**: `nil`. A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2`) |
 
 ### 3. Check Logz.io for your metrics
 
@@ -91,9 +91,10 @@ and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 
 ## Changelong
 
-1.0.0:
-
--   Initial Release
+- **1.0.1**:
+  - Bug fix `EXCLUDED_IMAGES` on container start.
+- **1.0.0**:
+  - Initial Release
 
 ## License
 
