@@ -90,8 +90,10 @@ and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 
 </details>
 
-## Changelong
+## Changelog
 
+- **1.1.0**:
+  - Allow attaching tags to metrics with `GLOBAL_TAGS` env var.
 - **1.0.1**:
   - Bug fix `EXCLUDED_IMAGES` on container start.
 - **1.0.0**:
