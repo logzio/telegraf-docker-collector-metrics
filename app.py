@@ -75,7 +75,7 @@ class MetricsFetcher:
                 tags = [t.strip() for t in os.environ[ENV_GLOBAL_TAGS].split(',')]
                 config_data['global_tags'] = {}
                 tag_key_index = 0
-                tag_value_index = 0
+                tag_value_index = 1
                 for tagStr in tags:
                     tag = [ts.strip() for ts in tagStr.split('=')]
                     config_data['global_tags'][tag[tag_key_index]] = tag[tag_value_index]
