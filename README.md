@@ -92,7 +92,7 @@ and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 
 ## Changelog
 
-- **1.1.1.**:
+- **1.1.1**:
   - Bug fix `GLOBAL_TAGS` uses key as both key and value.
 - **1.1.0**:
   - Allow attaching tags to metrics with `GLOBAL_TAGS` env var.
