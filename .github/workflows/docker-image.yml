@@ -29,7 +29,7 @@ jobs:
           context: .
           platforms: linux/amd64
           tags: |
-            logzio/docker-metrics-collector::${{ github.event.release.tag_name }}
+            logzio/docker-metrics-collector:${{ github.event.release.tag_name }}
             logzio/docker-metrics-collector:latest
 
       - name: Build and push arm64
@@ -39,5 +39,5 @@ jobs:
           file: ./Dockerfile.arm
           platforms: linux/arm64
           tags: |
-            logzio/docker-metrics-collector::${{ github.event.release.tag_name }}
+            logzio/docker-metrics-collector:${{ github.event.release.tag_name }}
             logzio/docker-metrics-collector:latest
