@@ -26,12 +26,10 @@ BASED_DATA = {
             {
                 "endpoint": "",
                 "gather_services": False,
-                "container_names": [],
                 "source_tag": True,
                 "container_name_include": [],
                 "container_name_exclude": [],
                 "timeout": "",
-                "perdevice": True,
                 "total": False,
                 "docker_label_include": [],
                 "docker_label_exclude": []
@@ -51,12 +49,21 @@ class MetricsFetcher:
     def set_params(self):
         config_data = BASED_DATA
 
-        if "EXCLUDED_IMAGES" in os.environ:
+        if "EXCLUDE_CONTAINERS" in os.environ:
             excluded_images = [ad.strip()
-                               for ad in os.environ["EXCLUDED_IMAGES"].split(",")]
+                               for ad in os.environ["EXCLUDE_CONTAINERS"].split(",")]
 
             if len(excluded_images) > 0:
                 config_data['inputs']['docker'][0]['container_name_exclude'] = excluded_images
+
+        if "INCLUDE_CONTAINERS" in os.environ:
+            included_images = [ad.strip()
+                               for ad in os.environ["INCLUDE_CONTAINERS"].split(",")]
+
+            if len(included_images) > 0:
+                config_data['inputs']['docker'][0]['container_name_include'] = included_images
+
+        # rest of the code remains the same
 
         config_data['outputs']['http'][0]['url'] = os.getenv(
             'LOGZIO_LISTENER', 'https://listener.logz.io:8053')
