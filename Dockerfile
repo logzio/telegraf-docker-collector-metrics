@@ -5,7 +5,6 @@ RUN apt-get update && \
 	wget https://dl.influxdata.com/telegraf/releases/telegraf_1.22.3-1_amd64.deb && \
 	dpkg -i telegraf_1.22.3-1_amd64.deb
 
-# COPY telegraf.conf  /telegraf.conf
 COPY requirements.txt ./
 COPY app.py ./
 
