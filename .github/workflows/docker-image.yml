@@ -38,6 +38,7 @@ jobs:
           context: .
           file: ./Dockerfile.arm
           platforms: linux/arm64
+          push: true
           tags: |
             logzio/docker-metrics-collector:${{ github.event.release.tag_name }}
             logzio/docker-metrics-collector:latest
