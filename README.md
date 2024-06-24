@@ -24,14 +24,15 @@ If you prefer to store these environment variables in an [`.env` file](./docker.
 docker run -d --env-file=docker.env -v /var/run/docker.sock:/var/run/docker.sock logzio/docker-metrics-collector:latest
 ```
 
-| Name            | Description                                                                                                                                                                                                                                                                                                                                                                                  |
-|-----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| METRICS_TOKEN   | **Required**. Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to.                                                                                                                                                                                                                                                      |
-| LOGZIO_LISTENER | **Default**: `https://listener.logz.io:8053`. Your Logz.io listener address followed by port `8053`.                                                                                                                                                                                                                                                                                         |
-| DOCKER_ENDPOINT | **Default**: default: `unix:///var/run/docker.sock`. Address to reach the required Docker Daemon.                                                                                                                                                                                                                                                                                            |
-| TIMEOUT         | **Default**: `5s`. The request timeout for any Docker Daemon query.                                                                                                                                                                                                                                                                                                                          |
-| EXCLUDED_IMAGES | **Default**: `nil`. A list of strings, [regexes](https://pkg.go.dev/regexp), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. !-prefixed negations are possible for all item types to signify that only unmatched container image names should be monitored. For example:`imageNameToExclude1,imageNameToExclude2`) |
-| GLOBAL_TAGS     | **Default**: `nil`. A Comma separated list of key-value pairs that will be added to every metriric. For example - `key1=value1,key2=value2`                                                                                                                                                                                                                                                  |
+| Name                | Description                                                                                                                                                                                                                              |
+|---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| METRICS_TOKEN       | **Required**. Your Logz.io metrics account token. Replace <<METRICS-SHIPPING-TOKEN>> with the token of the account you want to ship to.                                                                                                  |
+| LOGZIO_LISTENER     | **Default**: `https://listener.logz.io:8053`. Your Logz.io listener address followed by port `8053`.                                                                                                                                     |
+| DOCKER_ENDPOINT     | **Default**: default: `unix:///var/run/docker.sock`. Address to reach the required Docker Daemon.                                                                                                                                        |
+| TIMEOUT             | **Default**: `5s`. The request timeout for any Docker Daemon query.                                                                                                                                                                      |
+| INCLUDE_CONTAINERS  | **Default**: `nil`. A list of strings, or [globs](https://github.com/gobwas/glob) whose referent container image names will be among the queried containers. (For example:`containerNameToInclude1,containerNameToInclude2`)             |
+| EXCLUDE_CONTAINERS  | **Default**: `nil`. A list of strings, or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers. For example:`containerNameToExclude1,containerNameToExclude2`)          |
+| GLOBAL_TAGS         | **Default**: `nil`. A Comma separated list of key-value pairs that will be added to every metriric. For example - `key1=value1,key2=value2`                                                                                              |
 
 ### 3. Check Logz.io for your metrics
 
@@ -91,7 +92,9 @@ and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 </details>
 
 ## Changelog
-
+- **2.0.0**:
+  - **Breaking Change**: replace `EXCLUDED_IMAGES` with `EXCLUDE_CONTAINERS`.
+  - Added `INCLUDE_CONTAINERS` to filter in containers by container name.
 - **1.1.1**:
   - Bug fix `GLOBAL_TAGS` uses key as both key and value.
 - **1.1.0**:
