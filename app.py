@@ -30,7 +30,6 @@ BASED_DATA = {
                 "container_name_include": [],
                 "container_name_exclude": [],
                 "timeout": "",
-                "total": False,
                 "docker_label_include": [],
                 "docker_label_exclude": []
             }
