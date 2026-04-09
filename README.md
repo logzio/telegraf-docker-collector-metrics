@@ -92,6 +92,9 @@ and then open [Logz.io](https://app.logz.io/#/dashboard/metrics).
 </details>
 
 ## Changelog
+- **2.0.1**:
+  - Upgrade Telegraf from 1.22.3 to 1.37.1 to fix compatibility with Docker daemon API versions >= 1.40.
+  - Upgrade Python base image from 3.10.5-slim to 3.12-slim.
 - **2.0.0**:
   - **Breaking Change**: replace `EXCLUDED_IMAGES` with `EXCLUDE_CONTAINERS`.
   - Added `INCLUDE_CONTAINERS` to filter in containers by container name.
