@@ -1,9 +1,12 @@
-FROM python:3.10.5-slim
+FROM python:3.12-slim
 
 RUN apt-get update && \
 	apt-get install -y wget && \
-	wget https://dl.influxdata.com/telegraf/releases/telegraf_1.22.3-1_arm64.deb && \
-	dpkg -i telegraf_1.22.3-1_arm64.deb
+    wget https://dl.influxdata.com/telegraf/releases/telegraf_1.37.1-1_arm64.deb && \
+	dpkg -i telegraf_1.37.1-1_arm64.deb && \
+    rm telegraf_1.37.1-1_arm64.deb && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
 COPY app.py ./
